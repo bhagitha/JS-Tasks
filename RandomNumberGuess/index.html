@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Guess a number from 1 to 100</h2>
+   <input type="number" name="num" id="num" min=1 max=100>
+
+   <button onclick="guess()">Guess!!</button>
+   <h4 id="guess"> </h4>
+    <script>
+ function guess(){
+
+       value=Math.floor(Math.random() * 100) + 1;
+       console.log(value)
+      
+        guessValues=document.getElementById("num").value
+        console.log(guessValues)
+        if(guessValues){
+        if(value===guessValues){
+        document.getElementById("guess").innerText="Waaw you guessed exact !!!"
+        }
+        else if(value > guessValues){
+        document.getElementById("guess").innerText="hmmm..!! your guessed too short !!!"
+        }
+        else if(value < guessValues){
+        document.getElementById("guess").innerText="Ohhh..!! you guessed too high !!!"
+        }
+    }
+        else
+        document.getElementById("guess").innerText="select a number"
+
+
+
+}
+    </script>
+</body>
+
+</html>
